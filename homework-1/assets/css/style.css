@@ -32,7 +32,7 @@ header {
     background: #ffffff;
     overflow: hidden;
     margin: auto;
-    border-bottom: #666666 solid 2px;
+    border-bottom: #666666 solid 1px;
 }
 
 header .menu {
@@ -48,14 +48,13 @@ header .menu {
 h1 {
     float: left;
     width: 250px;
-    height: 50px;
     font-size: 25px;
+    height: 50px;
     border: #cccccc solid 2px;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
     background: #4aaaa5;
     text-align: center;
     color: #ffffff;
-    align-items: middle;
 }
 
 h2 {
