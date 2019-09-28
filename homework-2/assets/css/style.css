@@ -1,3 +1,8 @@
+#picture-of-me {
+    width: 300px;
+    float: left;
+}
+
 p, form {
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     color: #777777;
@@ -5,40 +10,26 @@ p, form {
     font-size: 17px;
 }
 
-a {
-    text-decoration: none;
-    color: #777777;
-}
-
 body {
-    width: 100%;
     padding: 0;
     margin: 0;
     background-image: url("../images/what-the-hex.png");
     background-repeat: repeat;
 }
 
-
-
-header .menu {
-    float: right;
-    text-align: center;
+nav {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
     color: lightgray;
 }
 
-
 h1 {
-    float: left;
-    width: 250px;
     font-size: 25px;
-    height: 50px;
+    height: 45px;
     border: #cccccc solid 2px;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
     background: #4aaaa5;
-    text-align: center;
     color: #ffffff;
 }
 
@@ -49,34 +40,17 @@ h2 {
     height: 50px
 }
 
-section {
+ section {
     top: 50px; 
     position: relative;
-    width: 920px;
     margin: auto;
     background: #ffffff;
     border: #dddddd solid 2px;
     align-content: center;
     padding: 20px;
-    margin-bottom: 100px;
-    min-height: calc(150vh - 70px)
-}
-
-footer {
-    background: #666666;
-    height: 50px;
-    margin-top: -0px;
-    border-top: #4aaaa5 solid 5px;
-   }
-   
-#picture-of-me {
-    float: left;
-    margin: 10px;
-    width: 300px;
 }
 
 .portfolio-image {
-    float: left;
     margin: 30px;
     width: 300px;
 }
