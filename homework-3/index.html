@@ -5,124 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Link to Boostrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
   <title>Password Generator</title>
 </head>
 
 <body>
 
-
-
-
-
-
-
-  <header>
-    <h1>Password Generator</h1>
-  </header>
-  <h2>Generate a Password</h2>
-  <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-  <button id="generate">Generate Password</button>
-  <button id="copy">
-    Copy to Clipboard
-  </button>
-
-  <script>
-
-
-    var password = ''
-
-    var specialCharacterList = '@#$%^&*()'
-    var numericCharactersList = '123456789'
-    var lowercaseCharactersList = 'abcdefghijklmnopqrstuvwxyz'
-    var uppercaseCharactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    var possibleCharacterList = ''
-
-
-
-    function makePassword() {
-    
-      var passwordLength = parseInt(prompt("Enter a Value", ''));
-      // var validPasswordLength = false
-
-      // // Password Length Validation
-      // function validation() {
-      //   if (passwordLength > 128 || passwordLength < 8) {
-      //     alert('Please type 8-128 characters')
-      //     validPasswordLength = false
-
-      //   }
-      //   else if (passwordLength === isNaN) {
-      //     alert("You must specify a character count in order to generate a password!");
-      //     return false;
-      //     validPasswordLength = false
-      //   }
-
-      //   else {
-      //     validPasswordLength = true
-      //   }
-
-      //   do {
-      //     validation()
-      //   }
-      //   while (validPasswordLength === false);
-
-    var specialCharacters = confirm("Would you like special characters?")
-    var numericCharacters = confirm("Would you like numbers?")
-    var lowercaseCharacters = confirm("Would you like lowercase letters?")
-    var uppercaseCharacters = confirm("Would you like uppercase Characters?")
-
-    if (specialCharacters === true) {
-      possibleCharacterList += specialCharacterList
-    }
-
-    if (numericCharacters === true) {
-      possibleCharacterList += numericCharactersList
-    }
-
-    if (lowercaseCharacters === true) {
-      possibleCharacterList += lowercaseCharactersList
-    }
-
-    if (uppercaseCharacters === true) {
-      possibleCharacterList += uppercaseCharactersList
-    }
-
-    console.log(possibleCharacterList)
-
-    for (var i = 0; i < passwordLength; i++) {
-      password += possibleCharacterList.charAt(Math.floor(Math.random() * passwordLength));
-    }
-    return password
-    }
-
-    var generateButton = document.querySelector("#generate")
-    var passwordText = document.querySelector("#password")
-    var copyButton = document.querySelector("#copy")
-
-    generateButton.addEventListener("click", makePassword);
-    passwordText.textContent = makePassword()
-
-
-
-function clipboard() {
-
-
-  /* Select the text field */
- passwordText.select();
-  passwordText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + passwordText.value);
-}
-copyButton.addEventListener("click", clipboard);
-
-  </script>
-
-
-
+  <div class="container center-block">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <h2>Generate a Password</h2>
+    <textarea class="form-control" readonly id="password" placeholder="Your Secure Password"
+      aria-label="Generated Password"></textarea>
+    <br>
+    <button type="button" class="btn btn-primary" id="generate">Generate Password</button>
+    <button type="button" class="btn btn-secondary" id="copy"> Copy to Clipboard </button>
+  </div>
+  <!-- Link to External JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 
