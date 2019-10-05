@@ -1,74 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-  </head>
-  <body>
 
-    <script>
-    var passwordAttributes = {
-      passwordLength: 8,
-      specialCharacters: true,
-      numericCharacters: true,
-      lowercaseCharacters: true,
-      uppercaseCharacters: true
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+</head>
 
-    var possibleCharacters = []
-
-    var specialCharacterList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+"]
-    var numericCharactersList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-    var lowercaseCharactersList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    var uppercaseCharactersList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-
-    if (specialCharacters = true) {
-      possibleCharacters.push(specialCharacterList)
-    } 
-    
-    if (numericCharacters = true) {
-      possibleCharacters.push(numericCharactersList)
-    }
-    
-    if (lowercaseCharacters = true) {
-      possibleCharacters.push(lowercaseCharactersList)
-    }
-    
-    if (uppercaseCharacters = true) {
-      possibleCharacters.push(uppercaseCharactersList)
-    }
-
-    console.log(possibleCharacters)
-
-    var password = []
-    
-    for (var i = 0; i < passwordAttributes.passwordLength; i++) {
-      password.push(possibleCharacters [Math.floor(Math.random() * possibleCharacters.length)])
-    }
-
-    console.log (password)
-    
-    
-    </script>
+<body>
 
 
 
 
-    <header>
+
+
+
+  <header>
     <h1>Password Generator</h1>
-    </header>
-    <h2>Generate a Password</h2>
-    <textarea
-      readonly
-      id="password"
-      placeholder="Your Secure Password"
-      aria-label="Generated Password"
-    ></textarea>
-    <button id="generate">Generate Password</button>
-    <button id="copy">
-      Copy to Clipboard
-    </button>
-  </body>
+  </header>
+  <h2>Generate a Password</h2>
+  <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+  <button id="generate">Generate Password</button>
+  <button id="copy">
+    Copy to Clipboard
+  </button>
+
+  <script>
+
+
+    var password = ''
+
+    var specialCharacterList = '@#$%^&*()'
+    var numericCharactersList = '123456789'
+    var lowercaseCharactersList = 'abcdefghijklmnopqrstuvwxyz'
+    var uppercaseCharactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    var possibleCharacterList = ''
+
+
+
+    function makePassword() {
+    
+      var passwordLength = parseInt(prompt("Enter a Value", ''));
+      // var validPasswordLength = false
+
+      // // Password Length Validation
+      // function validation() {
+      //   if (passwordLength > 128 || passwordLength < 8) {
+      //     alert('Please type 8-128 characters')
+      //     validPasswordLength = false
+
+      //   }
+      //   else if (passwordLength === isNaN) {
+      //     alert("You must specify a character count in order to generate a password!");
+      //     return false;
+      //     validPasswordLength = false
+      //   }
+
+      //   else {
+      //     validPasswordLength = true
+      //   }
+
+      //   do {
+      //     validation()
+      //   }
+      //   while (validPasswordLength === false);
+
+    var specialCharacters = confirm("Would you like special characters?")
+    var numericCharacters = confirm("Would you like numbers?")
+    var lowercaseCharacters = confirm("Would you like lowercase letters?")
+    var uppercaseCharacters = confirm("Would you like uppercase Characters?")
+
+    if (specialCharacters === true) {
+      possibleCharacterList += specialCharacterList
+    }
+
+    if (numericCharacters === true) {
+      possibleCharacterList += numericCharactersList
+    }
+
+    if (lowercaseCharacters === true) {
+      possibleCharacterList += lowercaseCharactersList
+    }
+
+    if (uppercaseCharacters === true) {
+      possibleCharacterList += uppercaseCharactersList
+    }
+
+    console.log(possibleCharacterList)
+
+    for (var i = 0; i < passwordLength; i++) {
+      password += possibleCharacterList.charAt(Math.floor(Math.random() * passwordLength));
+    }
+    return password
+    }
+
+    var generateButton = document.querySelector("#generate")
+    var passwordText = document.querySelector("#password")
+    var copyButton = document.querySelector("#copy")
+
+    generateButton.addEventListener("click", makePassword);
+    passwordText.textContent = makePassword()
+
+
+
+function clipboard() {
+
+
+  /* Select the text field */
+ passwordText.select();
+  passwordText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + passwordText.value);
+}
+copyButton.addEventListener("click", clipboard);
+
+  </script>
+
+
+
+
+</body>
+
 </html>
