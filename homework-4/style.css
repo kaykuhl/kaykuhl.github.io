@@ -1,0 +1,22 @@
+body {
+    /* background-image: url("images/pattern.png"); */
+    background-repeat: repeat;
+    width: 100%;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Mansalva', cursive,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#777777;
+}
+
+.container {
+    margin: auto;
+    width: 550px;
+    /* background-image: url("images/dot-grid.png"); */
+    background-repeat: repeat;
+    padding: 10px;
+    position: relative;
+    top: 100px;
+    border: #777777 solid 3px;
+}
