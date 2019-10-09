@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Mansalva', cursive,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Mansalva', cursive,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     color:#777777;
 }
 
@@ -19,4 +19,22 @@ h1, h2 {
     position: relative;
     top: 100px;
     border: #777777 solid 3px;
+}
+
+#quizQuestions {
+    font-size: 30px;
+}
+
+#seconds {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: red;
+    font-size: 50px;
+    font-style: oblique;
+}
+
+.btn {
+    padding: 2px;
+    margin: 10px;
 }
