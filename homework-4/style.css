@@ -1,40 +1,46 @@
 body {
-    /* background-image: url("images/pattern.png"); */
+    background-image: url("images/food.png");
     background-repeat: repeat;
     width: 100%;
     text-align: center;
+    font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
 }
 
 h1, h2 {
-    /* font-family: 'Mansalva', cursive,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
     color:#777777;
 }
 
 .container {
     margin: auto;
     width: 550px;
-    /* background-image: url("images/dot-grid.png"); */
     background-repeat: repeat;
     padding: 10px;
     position: relative;
     top: 100px;
     border: #777777 solid 3px;
+    background: whitesmoke;
 }
 
 #quizQuestions {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #seconds {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 50px;
-    color: red;
-    font-size: 50px;
-    font-style: oblique;
+    color: whitesmoke;
+    font-size: 60px;
+    background: black;
+    margin: 15px;
+    
 }
 
 .btn {
-    padding: 2px;
-    margin: 10px;
+    margin: 4px;
+}
+
+#result {
+    color:#777777;
 }

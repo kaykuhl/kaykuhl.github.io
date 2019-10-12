@@ -12,39 +12,32 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <!-- Link to Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
-  <title>Quiz Game</title>
+  <!-- Link to JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Pizza Quiz Game</title>
 </head>
 
 <body>
-
-    <div id="seconds"></div>
-
+  <div id="seconds"></div>
   <div class="container center-block">
-
-      
-
-    <div id="quizQuestions"><h1>Quiz Game</h1></div>
+    <div id="quizQuestions">
+      <h1>Pizza Quiz Game</h1>
+    </div>
     <br>
     <div id="quizChoices">
-        <div class="selection" id="A"></div>
-
-        <div class="selection" id="B"></div>
-
-        <div class="selection" id="C"></div>
-
-        <div class="selection" id="D"></div>
-
+      <div class="selection" id="A"></div>
+      <div class="selection" id="B"></div>
+      <div class="selection" id="C"></div>
+      <div class="selection" id="D"></div>
     </div>
+    <div id=result></div>
     <br>
     <div id="startButton">
-    <button type="button" id="startQuiz" class="btn btn-primary">Start Quiz</button>
+      <button type="button" id="startQuiz" class="btn btn-outline-dark btn-lg btn-block">Start Quiz</button>
     </div>
-    
-
-
-
   </div>
   <!-- Link to External JavaScript -->
+  <script src="quiz-questions.js"></script>
   <script src="script.js"></script>
 
 </body>
