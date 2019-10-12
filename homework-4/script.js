@@ -134,8 +134,8 @@ function highScore() {
   var newForm = document.createElement("form");
   resultDiv.appendChild(newForm);
 
-  newForm.setAttribute('method', "post");
-  newForm.setAttribute('action', "submit.php");
+  // newForm.setAttribute('method', "post");
+  // newForm.setAttribute('action', "submit.php");
   var input = document.createElement("input");
   input.setAttribute('type', "text");
   input.setAttribute('name', "initals");
@@ -153,7 +153,7 @@ function highScore() {
   newForm.addEventListener("submit", function () {
     event.preventDefault();
     var inputEl = document.querySelector(".inputInitials")
-    var result = { initals: inputEl, score: userScore }
+    var result = { initals: inputEl.value, score: userScore }
     localStorage.setItem( 'highScore', JSON.stringify(result) );
     console.log( JSON.parse( localStorage.getItem( 'highScore' ) ) );
 
