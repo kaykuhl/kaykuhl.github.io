@@ -14,18 +14,24 @@ var resultDiv = document.querySelector("#result")
 var buttonsEl = document.querySelector(".btn")
 var isCorrect = true
 var input = document.getElementById("saveScore");
-
+var highScoreList = []
+var newForm = document.createElement("form");
+var input = document.createElement("input");
+var submit = document.createElement("input");
 
 //Set userScore and current question to 0
 var userScore = 0
 var currentQuestion = 0
 
 //Set start time
-var time = 60
+var time = 80
 
 //function to start timer
 function startTimer() {
-
+  //reset time, userscore, and current question (so you can restart quiz by calling this function)
+  time = 80
+  userScore = 0
+  currentQuestion = 0
   interval = setInterval(function () {
     time--;
     timer.textContent = time
@@ -37,6 +43,7 @@ function startQuiz() {
   startTimer()
   //removes start quiz button and inner HTML
   startButtonDiv.innerHTML = ""
+  resultDiv.innerHTML = ""
 
   //adds question title to HTML
   quizQuestionsDiv.innerHTML = questions[currentQuestion].title
@@ -99,71 +106,81 @@ selectionD.addEventListener("click", function () {
 function displayResult() {
   if (isCorrect === true) {
     userScore = userScore + 10;
-    resultDiv.innerHTML = "<hr>" + "You are CORRECT!!! You have " + userScore + " points";
+    resultDiv.innerHTML = "<hr>" + "You were CORRECT!!! You have " + userScore + " points";
     increaseQuestion();
   }
   else {
     time = time - 10;
-    resultDiv.innerHTML = "<hr>" + "You are WRONG!!! You have " + userScore + " points";;
+    resultDiv.innerHTML = "<hr>" + "You were WRONG!!! You have " + userScore + " points";;
     increaseQuestion();
   }
 }
 
 //function to go onto next question
 function increaseQuestion() {
-
   currentQuestion++;
 
   //End Quiz conditions
-  if (currentQuestion === 10 || time < 0) {
+  if (currentQuestion === 11 || time < 0) {
     clearInterval(interval)
-    quizQuestionsDiv.innerHTML = "Quiz is Complete!"
-    quizChoicesDiv.innerHTML = "Congratulations, you have " + userScore + " points!" + "<br>"
+    quizQuestionsDiv.innerHTML = "Quiz is Complete!" + "<hr>" + "Congratulations, you have " + userScore + " points!" + "<br>"
+    selectionA.innerHTML = ""
+    selectionB.innerHTML = ""
+    selectionC.innerHTML = ""
+    selectionD.innerHTML = ""
     resultDiv.innerHTML = ""
     timer.innerHTML = ""
     highScore()
-
   }
   else {
     renderNextQuestion();
   }
 }
 
-//Submit high score
-function highScore() {
-  var newForm = document.createElement("form");
-  resultDiv.appendChild(newForm);
 
-  // newForm.setAttribute('method', "post");
-  // newForm.setAttribute('action', "submit.php");
-  var input = document.createElement("input");
+//Submit high score 
+function highScore() {
+
+  resultDiv.appendChild(newForm);
   input.setAttribute('type', "text");
   input.setAttribute('name', "initals");
   input.className = "inputInitials"
-
-  var submit = document.createElement("input");
   submit.setAttribute('type', "submit");
   submit.setAttribute('value', "Submit");
   submit.className = "submitButton"
-
   newForm.appendChild(input);
   newForm.appendChild(submit);
 
 
+  //submit button event
   newForm.addEventListener("submit", function () {
     event.preventDefault();
-    var inputEl = document.querySelector(".inputInitials")
-    var result = { initals: inputEl.value, score: userScore }
-    localStorage.setItem( 'highScore', JSON.stringify(result) );
-    console.log( JSON.parse( localStorage.getItem( 'highScore' ) ) );
+    quizQuestionsDiv.innerHTML = "High Score List"
+    var result = { initals: input.value, score: userScore }
 
+    // Render High Score List !!!!!!!! CURRENTLY NOT WORKING PROPERLY !!!!!!!!!!!!!!
+    if (highScoreList.length === 0) {
+      localStorage.setItem('highScores', JSON.stringify(result))
+      resultDiv.innerHTML = "<br>" + result.initals + " : " + result.score;
+    }
+    else {
+      highScoreList.push(JSON.parse(localStorage.getItem('highScores')))
+      console.log(highScoreList)
+      var updatedList = highScoreList.push(result)
+      localStorage.setItem('highScores', JSON.stringify(updatedList))
+
+      for (var i = 0; i < highScoreList.length; i++) {
+        resultDiv.innerHTML = "<br>" + highScoreList[i].initals + " : " + highScoreList[i].score;
+      }
+    }
   })
 
-
+  // create restart button to restart quiz
+  restartButton = document.createElement('button')
+  startButtonDiv.append(restartButton)
+  restartButton.innerHTML = "Restart Quiz"
+  restartButton.addEventListener("click", startQuiz);
 }
-
-// Retrieve
-var score = localStorage.getItem("score");
 
 //Function to render next questions
 function renderNextQuestion() {

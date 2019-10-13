@@ -5,9 +5,9 @@ var questions = [
       answer: "Naples, Italy"
     },
     {
-      title: "How many slices of pizza does an average person eat in america?",
+      title: "How many slices of pizza does an average person eat in america in a year?",
       choices: ["121 slices", "12 slices", "20 slices", "46 slices"],
-      answer: "Crainium"
+      answer: "46 slices"
     },
     {
       title: "What is the most popular pizza topping",
