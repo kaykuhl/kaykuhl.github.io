@@ -159,20 +159,15 @@ function highScore() {
     var result = { initals: input.value, score: userScore }
 
     // Render High Score List !!!!!!!! CURRENTLY NOT WORKING PROPERLY !!!!!!!!!!!!!!
-    if (highScoreList.length === 0) {
-      localStorage.setItem('highScores', JSON.stringify(result))
-      resultDiv.innerHTML = "<br>" + result.initals + " : " + result.score;
-    }
-    else {
-      highScoreList.push(JSON.parse(localStorage.getItem('highScores')))
-      console.log(highScoreList)
-      var updatedList = highScoreList.push(result)
-      localStorage.setItem('highScores', JSON.stringify(updatedList))
+  
+      // highScoreList = highScoreList.push(localStorage.setItem('highScores', JSON.stringify(result)))
+      // console.log(typeof(highScoreList))
+      // var updatedList = highScoreList.push(result)
+      // localStorage.setItem('highScores', JSON.stringify(updatedList))
 
-      for (var i = 0; i < highScoreList.length; i++) {
-        resultDiv.innerHTML = "<br>" + highScoreList[i].initals + " : " + highScoreList[i].score;
-      }
-    }
+      // for (var i = 0; i < highScoreList.length; i++) {
+      //   resultDiv.innerHTML = "<br>" + highScoreList[i].initals + " : " + highScoreList[i].score;
+      // }
   })
 
   // create restart button to restart quiz
