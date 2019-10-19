@@ -21,6 +21,9 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+.col-md-10, .col-md-1 {
+  padding: 0px;
+}
 
 .description{
   white-space: pre-wrap;
@@ -43,11 +46,6 @@ textarea{
   color: #000000;
   border-top: 1px dashed #000000;
   text-align: right;
-}
-
-.fas {
-  position: relative;
-  top: 0px;
 }
 
 .past {
