@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-
   <title>Weather Dashboard</title>
 </head>
 
@@ -21,9 +20,40 @@
     <p class="lead description">Check the weather here!</p>
   </header>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 form-group">
+        <label for="search">Enter a City:</label>
+        <input type="text" class="form-control" id="search-term">
+        <button type="submit" class="btn btn-default" id="run-search">
+          <i class="fa fa-search"></i> Search</button>
+      </div>
+      <div class="col-md-4 buttons-view"></div>
+    <div class="col-md-1 weather-icon"></div>
+    <div class="col-md-4 search-data"></div>
+  </div>
+  
+
+  <div class= "row">
+    <div class = "col-md-1"></div>
+    <div class = "col-md-2 Day1"></div>
+    <div class = "col-md-2 Day2"></div>
+    <div class = "col-md-2 Day3"></div>
+    <div class = "col-md-2 Day4"></div>
+    <div class = "col-md-2 Day5"></div>
+    <div class = "col-md-1"></div>
+  </div>
+
+</div>
+
+
+
+
+
+
   <!-- Javascript links -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APPID}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/x.y.z/moment.min.js"></script>
   <script src="script.js"></script>
 
 </body>
