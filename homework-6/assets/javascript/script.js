@@ -1,12 +1,18 @@
 var searchData = $(".search-data")
 var listOfCities = []
 var city
-// NEED TO LINK INPUT OF SEARCH TERM TO LIST OF CITIES FOR BUTTON RENDERING
-// ALSO NEED TO SAVE IN LOAL STORAGE
-// USE WORKING-MOVIE-APP-SOLVED FROM 6-2 FOR REFERENCE!!!
+var APIKey = "78348e5f28e3de3c5614816a69e65e62";
 
 
+$(document).ready(function() {
+    if(typeof(localStorage.getItem("cities")) !== 'undefined') {
+    listOfCities.push(localStorage.getItem(JSON.parse("cities")));
+    renderButtons()
+    }})
 
+function saveCities() {
+        localStorage.setItem("cities", JSON.stringify(listOfCities));
+    }
 
 function renderButtons () {
     $(".buttons-view").empty();
@@ -18,9 +24,6 @@ function renderButtons () {
         $(".buttons-view").prepend(a);
       }
     }
-
-
-var APIKey = "78348e5f28e3de3c5614816a69e65e62";
 
 function displayWeather () {
     $(".cityWeather").empty();
@@ -66,24 +69,25 @@ function displayWeather () {
             }
             renderButtons()
             display5day ()
+            saveCities ()
         })   
  };
 
 
 
- function display5day () {
-    var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
-    $.ajax({
-        url: forcastURL,
-        method: "GET"
-    })
-    .then(function(response) {
-        console.log(response);
+//  function display5day () {
+//     var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
+//     $.ajax({
+//         url: forcastURL,
+//         method: "GET"
+//     })
+//     .then(function(response) {
+//         console.log(response);
 
-        $(".day1").text(moment.js(response.list[1].dt).format(ddd))
+//         $(".day1").text(moment.js(response.list[1].dt).format(ddd))
 
 
- })}
+//  })}
 
 
  $("#run-search").on("click", function () {
