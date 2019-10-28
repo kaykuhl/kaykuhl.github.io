@@ -90,13 +90,14 @@ function display5day() {
     //URL for 5 day forcast call
     var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey
     //Added Header that displays with results
-    $(".fiveDayHeader").html("<h3>5 Day Forcast</h3>")
-    //AJAX call for 5 day forcast
+    $(".fiveDayHeader").html("<h3>5 Day Forecast</h3>")
+    //AJAX call for 5 day forecast
     $.ajax({
         url: forcastURL,
         method: "GET"
     })
         .then(function (response) {
+
             var day1date = new Date(response.list[2].dt_txt)
             var day2date = new Date(response.list[10].dt_txt)
             var day3date = new Date(response.list[18].dt_txt)
