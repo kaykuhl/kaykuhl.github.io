@@ -19,12 +19,15 @@ The search history is saved to local storage. The clear button will clear out th
 ## Screenshots
 
 The landing page of the application. You can search for a city by inputting a city name and pressing "search"
+
 ![Landing Page Screenshot](https://kaykuhl.github.io/homework-6/assets/images/readme-index.PNG)
 
 The page will display the current weather and 5 day forecast for the searched city.
+
 ![Search Results for a City](https://kaykuhl.github.io/homework-6/assets/images/readme-search.PNG)
 
 A saved search history will be displayed as clickable buttons and saved in local storage.
+
 ![Search History Buttons](https://kaykuhl.github.io/homework-6/assets/images/readme-buttons.PNG)
 
 ## Future Developments
