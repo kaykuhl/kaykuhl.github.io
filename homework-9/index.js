@@ -27,7 +27,7 @@ function promptUser() {
         console.log(imageUrl)
         });
     }) }
-.then 
+
 
 
 function generateHTML(answers) {
