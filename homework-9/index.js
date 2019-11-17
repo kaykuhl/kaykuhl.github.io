@@ -7,30 +7,33 @@ const pdf = require('html-pdf');
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-let repos
-let imageUrl
-
+// let repos
+// let imageUrl
 
 function promptUser() {
-
   return inquirer.prompt({
     message: "Enter your GitHub username:",
     name: "username"
   })
-    .then(function ({ username }) {
-      const queryUrl = `https://api.github.com/users/${username}`;
-
-      axios.get(queryUrl).then(function (response) {
-        repos = response.data.public_repos
-        imageUrl = response.data.avatar_url
-        console.log(repos)
-        console.log(imageUrl)
-        });
-    }) }
+}
 
 
-
-function generateHTML(answers) {
+function getData (answers) {
+      const queryUrl = `https://api.github.com/users/${answers.username}`;
+      axios({
+        url: queryUrl,
+        method: 'get',
+        data: {
+          repos: public_repos,
+          imageUrl: avatar_url
+        }
+      })
+      console.log(this.data.repos)
+}
+      
+      
+function generateHTML() {
+  console.log("hi")
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -48,7 +51,7 @@ function generateHTML(answers) {
       <div class = "row">
       <div class = "col-xs-6">
       Repositories
-      <br>${repos}
+      <br>${answers.repos}
       </div>
       <div class = "col-xs-6">
       Followers
@@ -58,7 +61,7 @@ function generateHTML(answers) {
       <div class = "row">
       <div class = "col-xs-6">
       GitHubStars
-      <br>***GITHUBSTARS*** ${imageUrl}
+      <br>***GITHUBSTARS*** ${answers.imageUrl}
       </div>
       <div class = "col-xs-6">
       FOLLOWING
@@ -70,11 +73,12 @@ function generateHTML(answers) {
   </html>`;
 }
 
-
-
 async function init() {
+  
   try {
-    const answers = await promptUser();
+    const answers = await promptUser()
+    console.log("hello")
+    getData(answers)
     const html = generateHTML(answers);
 
     await writeFileAsync("index.html", html);
