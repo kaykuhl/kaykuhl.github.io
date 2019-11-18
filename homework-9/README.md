@@ -46,4 +46,4 @@ Additionally, the color selected at the beginning of the application will be sho
 
 ![Running Application Demo](https://kaykuhl.github.io/homework-9/assets/application.gif)
 
-![Rendering of PDF](https://kaykuhl.github.io/homework-9/assets/pdf.jpg)
+![Rendering of PDF](https://kaykuhl.github.io/homework-9/assets/pdf.JPG)
