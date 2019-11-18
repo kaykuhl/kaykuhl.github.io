@@ -16,6 +16,7 @@ This is a command-line application that generates a PDF profile based on user in
 ## Example User Stories
 
 As an employer hiring developers, I want a developer profile generator, so that I can easily prepare reports for the hiring team.
+
 As a web developer job searching, I want a developer profile generator, so that I can generate an updated pdf of my GitHub information.
 
 ## Instructions
@@ -41,6 +42,6 @@ The PDF will contain the following:
 
 Additionally, the color selected at the beginning of the application will be shown on the pdf.
 
-## Gif
+## Demo
 
-[Gif of Application](./assets/application.gif)
+[!](./assets/application.gif)

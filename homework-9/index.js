@@ -39,6 +39,7 @@ function promptUser() {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/sandstone/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
@@ -50,28 +51,41 @@ function promptUser() {
       background: ${answers.color} !important;
       text-align: center;
   }
+  .bottom-block {
+    border-bottom: dashed 2px ${answers.color} !important;
+  }
   .container {
     text-align: center;
   }
   body {
     margin: auto;
     align-content: center;
+    font-size: 20px;
+    font-family: 'Oxygen', sans-serif, Arial, Helvetica, sans-serif;
   }
   h3 {
    font-size: 20px;
     font-style: italic;
+    padding: 20px;
+    background: ${answers.color} !important;
   }
   .col-xs-6 {
     padding: 20px;
     font-size: 20px;
   }
+  p {
+    font-size: 15px;
+  }
   </style>
     <div class="jumbotron jumbotron-fluid">
     <img class = "img-circle" src ="${res.data.avatar_url}">
-      <h1 class="display-4">Hi! My name is ${res.data.name}</h1></div>
+      <h1 class="display-4">Hello, my name is ${res.data.name}!</h1></div>
     <div class="container">
-      <h2> I am from ${res.data.location}.</h2>
-      <h3> ${res.data.bio}</h3>
+      <p><ul>Links:</ul>
+      <li>My GitHub: <a href='https://github.com/${answers.username}'>${answers.username}</a></li>
+      <li>I am from: <a href='https://www.google.com/maps?q=${res.data.location}'>${res.data.location}.</a></li>
+      <li>My Blog: <a href='${res.data.blog}'>here</a></li></p>
+      <h3>Bio: ${res.data.bio}</h3>
       <div class = "row">
       <div class = "col-xs-6">
       <b>Repositories</b>
@@ -92,6 +106,7 @@ function promptUser() {
       <br>${res.data.following}
       </div>
       </div>
+      <div class ="bottom-block"><br></div>
     </div>
   </body>
   </html>`
@@ -107,7 +122,7 @@ async function init() {
           var readHtml = fs.readFileSync('index.html', 'utf8');
           var options = { format: 'Letter' };
           //render pdf
-          pdf.create(readHtml, options).toFile('github-info.pdf', function (err, res) {
+          await pdf.create(readHtml, options).toFile('github-info.pdf', function (err, res) {
             if (err) return console.log(err);
             console.log(res);
           });

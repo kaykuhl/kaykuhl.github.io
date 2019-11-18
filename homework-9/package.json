@@ -1,18 +1,18 @@
 {
-  "name": "axios",
+  "name": "github-portfolio-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "application to generate pdf from github profile",
   "main": "index.js",
-  "dependencies": {
-    "await": "^0.2.6",
-    "axios": "^0.19.0",
-    "html-pdf": "^2.2.0",
-    "inquirer": "^7.0.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Kayla Kuhlman kakoreo4@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "fs": "0.0.1-security",
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.0",
+    "util": "^0.12.1"
+  }
 }
