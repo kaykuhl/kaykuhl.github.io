@@ -44,7 +44,7 @@ function promptUser() {
   </head>
   <body>
   <style>
-  img {
+  .img-circle {
     width: 20%;
   }
   .jumbotron {
@@ -64,27 +64,23 @@ function promptUser() {
     font-family: 'Oxygen', sans-serif, Arial, Helvetica, sans-serif;
   }
   h3 {
-   font-size: 20px;
+    font-size: 20px;
     font-style: italic;
     padding: 20px;
     background: ${answers.color} !important;
   }
   .col-xs-6 {
     padding: 20px;
-    font-size: 20px;
-  }
-  p {
-    font-size: 15px;
   }
   </style>
     <div class="jumbotron jumbotron-fluid">
     <img class = "img-circle" src ="${res.data.avatar_url}">
       <h1 class="display-4">Hello, my name is ${res.data.name}!</h1></div>
     <div class="container">
-      <p><ul>Links:</ul>
-      <li>My GitHub: <a href='https://github.com/${answers.username}'>${answers.username}</a></li>
-      <li>I am from: <a href='https://www.google.com/maps?q=${res.data.location}'>${res.data.location}.</a></li>
-      <li>My Blog: <a href='${res.data.blog}'>here</a></li></p>
+      <ul>Links:</ul>
+      <li>GitHub: <a href='https://github.com/${answers.username}'>${answers.username}</a></li>
+      <li>Location: <a href='https://www.google.com/maps?q=${res.data.location}'>${res.data.location}</a></li>
+      <li>Blog: <a href='${res.data.blog}'>${res.data.blog}</a></li>
       <h3>Bio: ${res.data.bio}</h3>
       <div class = "row">
       <div class = "col-xs-6">
