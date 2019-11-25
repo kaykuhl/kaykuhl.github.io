@@ -2,100 +2,17 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 
+// Require external modules (classes)
+const Manager = require("./assets/script/manager");
+const Employee = require("./assets/script/employee");
+const Engineer = require("./assets/script/engineer");
+const Intern = require("./assets/script/intern");
+
+
 // Global Variables
 let theManager
 let engineers = []
 let interns = []
-
-//Employee Class
-class Employee {
-  constructor(name, id, email) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    this.role = "employee";
-  }
-  getName() {
-    return this.name
-  }
-  getId() {
-    return this.Id
-  }
-  getEmail() {
-    return this.email
-  }
-  getRole() {
-    return this.role
-  }
-}
-
-//Manager Class
-class Manager extends Employee {
-  constructor(name, id, email, officeNumber) {
-    super(name, id, email);
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    this.role = "manager";
-    this.officeNumber = officeNumber;
-  }
-  getName() {
-    return this.name
-  };
-  getId() {
-    return this.id
-  };
-  getRole() {
-    return this.role
-  };
-  getOfficeNumber() {
-    return this.officeNumber
-  }
-}
-
-//Engineer Class
-class Engineer extends Employee {
-  constructor(name, id, email, gitHub) {
-    super(name, id, email);
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    this.role = "engineer";
-    this.gitHub = gitHub;
-  }
-  getName() {
-    return this.name
-  };
-  getId() {
-    return this.id
-  };
-  getRole() {
-    return this.role
-  };
-  getGithub() {
-    return this.gitHub
-  }
-}
-
-//Intern Class
-class Intern extends Employee {
-  constructor(name, id, school) {
-    super(name, id);
-    this.name = name;
-    this.id = id;
-    this.role = "intern";
-    this.school = school;
-  }
-  getRole() {
-    return this.role
-  };
-  getId() {
-    return this.id
-  };
-  getSchool() {
-    return this.school
-  }
-}
 
 //Initial Function to get manager info (there is only 1 manager)
 function getManagerInfo() {
@@ -139,8 +56,7 @@ function addNewTeamMember() {
     if (answers.typeOfEmployee === "There are no more team members") {
       endApplication()
     }
-  }
-  )
+  })
 }
 
 //Function to get engineer info
@@ -181,10 +97,14 @@ function getInternInfo() {
     name: "internID"
   }, {
     type: "input",
+    message: "What is the Intern's Email?",
+    name: "internEmail"
+  }, {
+    type: "input",
     message: "What is the Intern's School?",
     name: "internSchool"
   }]).then(function (internInfo) {
-    interns.push(new Intern(internInfo.internName, internInfo.internID, internInfo.internSchool))
+    interns.push(new Intern(internInfo.internName, internInfo.internID, internInfo.internEmail, internInfo.internSchool))
     addNewTeamMember()
   })
 }
@@ -247,10 +167,10 @@ h1 {
   <div class="container">
   <div class="card">
   <h5 class="card-title">Manager <i class="fa fa-building"></i></h5><hr>
-  <p class="card-text">Name: ${theManager.getName()}</p>
-  <p class="card-text">ID: ${theManager.getId()}</p>
-  <p class="card-text">Email: ${theManager.getEmail()}</p>
-  <p class="card-text">Office Number: ${theManager.getOfficeNumber()}</p>
+  <p>Name: ${theManager.getName()}</p>
+  <p>ID: ${theManager.getId()}</p>
+  <p>Email: ${theManager.getEmail()}</p>
+  <p>Office Number: ${theManager.getOfficeNumber()}</p>
   </div>
   <script type="text/javascript" src="script.js"></script>
 </body>
@@ -278,7 +198,7 @@ h1 {
     fs.appendFile('script.js', `
   var ${divName} = document.createElement('div')
   ${divName}.className = "card"
-  ${divName}.innerHTML = '<h5 class="card-title">Engineer <i class="fa fa-cogs"></i></h5><hr><p class="card-text">Name: ${engineerNameText}</p><p class="card-text">ID: ${engineerIDText}</p><p class="card-text">Email: ${engineerEmailText}</p><p class="card-text">GitHub: ${engineerGitHubText}</p></div>'
+  ${divName}.innerHTML = '<h5 class="card-title">Engineer <i class="fa fa-cogs"></i></h5><hr><p>Name: ${engineerNameText}</p><p>ID: ${engineerIDText}</p><p>Email: ${engineerEmailText}</p><p>GitHub: ${engineerGitHubText}</p></div>'
   document.querySelector(".container").appendChild(${divName})`, function (err) {
       if (err) throw err;
     });
@@ -287,12 +207,13 @@ h1 {
   for (var i = 0; i < interns.length; i++) {
     var internNameText = interns[i].getName()
     var internIDText = interns[i].getId()
+    var internEmail = interns[i].getEmail()
     var internSchool = interns[i].getSchool()
     var divName = "newIntern" + [i]
     fs.appendFile('script.js', `
   var ${divName} = document.createElement('div')
   ${divName}.className = "card"
-  ${divName}.innerHTML = '<h5 class="card-title">Intern <i class="fa fa-mortar-board"></i></h5><hr><p class="card-text">Name: ${internNameText}</p><p class="card-text">ID: ${internIDText}</p><p class="card-text">School: ${internSchool}</p></div>'
+  ${divName}.innerHTML = '<h5 class="card-title">Intern <i class="fa fa-mortar-board"></i></h5><hr><p>Name: ${internNameText}</p><p>ID: ${internIDText}</p><p class = "card-text">Email: ${internEmail}</p><p>School: ${internSchool}</p></div>'
   document.querySelector(".container").appendChild(${divName})`, function (err) {
       if (err) throw err;
     });
