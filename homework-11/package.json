@@ -12,5 +12,10 @@
     "url": "kaykuhl.github.io"
   },
   "author": "Kayla Kuhlman",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
 }

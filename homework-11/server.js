@@ -40,16 +40,15 @@ app.post('/api/notes', function (req, res) {
     notes.push(newNote);
     res.json(newNote);
     renderNotes()
-    assignNoteIds ()
 })
 
 //app.delete request
 app.delete('/api/notes/:id', function (req, res) {
     const NoteId = req.params.id;
+    //splice removed from array
     notes.splice(NoteId, 1);
     renderNotes()
-    assignNoteIds()
-})
+    })
 
 //Function for assigning IDs to notes
 function assignNoteIds (){
@@ -63,6 +62,7 @@ function renderNotes () {
         if (err)
             throw err    
         })
+        assignNoteIds()
 }
 
 // Starts the server
