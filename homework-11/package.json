@@ -1,0 +1,16 @@
+{
+  "name": "homework-11",
+  "version": "1.0.0",
+  "description": "Note Taker application using Express module in node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kaykuhl.github.io"
+  },
+  "author": "Kayla Kuhlman",
+  "license": "ISC"
+}

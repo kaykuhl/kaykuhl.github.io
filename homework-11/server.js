@@ -1,49 +1,69 @@
-// Dependencies
-var http = require("http");
-var fs = require("fs");
+// Dependencies/server & middleware set up
+const express = require("express");
+const path = require("path")
+const fs = require("fs");
 
-var PORT = 8080;
+const app = express()
 
-var server = http.createServer(handleRequest);
+const PORT = process.env.PORT || 8080;
 
-function handleRequest(req, res) {
-  var path = req.url;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(__dirname + '/Develop/public'));
 
-  switch (path) {
-  case "/notes":
-    return renderNotesPage(req, res);
-  default:
-    return renderWelcomePage(req, res);
-  }
+// Routes for index and notes pages
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, 'Develop/public/index.html'));
+});
+
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
+});
+
+//fs read file used to read db.json file and put it into variable "notes"
+let notes 
+
+const listOfNotes = fs.readFileSync("Develop/db/db.json");
+if(listOfNotes) {
+    notes = JSON.parse(listOfNotes)
 }
 
-function renderWelcomePage(req, res) {
-  fs.readFile(__dirname + "/Develop/public/index.html", function(err, data) {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/html" });
-      res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
-    }
-    else {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(data);
-    }
-  });
-}
+// Displays all notes
+app.get("/api/notes", function (req, res) {
+    return res.json(notes);
+});
 
-function renderNotesPage(req, res) {
-  fs.readFile(__dirname + "/Develop/public/notes.html", function(err, data) {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/html" });
-      res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
-    }
-    else {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(data);
-    }
-  });
+//post request
+app.post('/api/notes', function (req, res) {
+    var newNote = req.body;
+    console.log(newNote)
+    notes.push(newNote);
+    res.json(newNote);
+    renderNotes()
+    assignNoteIds ()
+})
+
+//app.delete request
+app.delete('/api/notes/:id', function (req, res) {
+    const NoteId = req.params.id;
+    notes.splice(NoteId, 1);
+    renderNotes()
+    assignNoteIds()
+})
+
+//Function for assigning IDs to notes
+function assignNoteIds (){
+    for(i = 0; i < notes.length; i++){
+        notes[i].id = i;
+    }}
+
+//Function for assigning rendering notes onto notes route
+function renderNotes () {
+    fs.writeFileSync("Develop/db/db.json", JSON.stringify(notes, null, 2), function(err) {
+        if (err)
+            throw err    
+        })
 }
 
 // Starts the server
-server.listen(PORT, function() {
-  console.log("Server listening on: http://localhost:" + PORT);
-});
+app.listen(PORT, () => console.log("Server listening on: http://localhost:" + PORT))
