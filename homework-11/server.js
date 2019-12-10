@@ -1,9 +1,9 @@
 // Dependencies/server & middleware set up
-const express = require("express");
-const path = require("path")
-const fs = require("fs");
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 
-const app = express()
+const app = express();
 
 const PORT = process.env.PORT || 8080;
 
@@ -17,52 +17,53 @@ app.get("/", function (req, res) {
 });
 
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
 
-//fs read file used to read db.json file and put it into variable "notes"
-let notes 
+// fs read file used to read/parse db.json file and put it into variable "notes"
+let notes
 
-const listOfNotes = fs.readFileSync("Develop/db/db.json");
-if(listOfNotes) {
-    notes = JSON.parse(listOfNotes)
+const listOfNotes = fs.readFileSync('Develop/db/db.json');
+if (listOfNotes) {
+    notes = JSON.parse(listOfNotes);
 }
 
-// Displays all notes
+// get request for api route (displays all notes)
 app.get("/api/notes", function (req, res) {
     return res.json(notes);
 });
 
-//post request
+// post request
 app.post('/api/notes', function (req, res) {
     var newNote = req.body;
-    console.log(newNote)
+    console.log(newNote);
     notes.push(newNote);
     res.json(newNote);
-    renderNotes()
+    renderNotes();
 })
 
-//app.delete request
+// delete request
 app.delete('/api/notes/:id', function (req, res) {
     const NoteId = req.params.id;
     //splice removed from array
     notes.splice(NoteId, 1);
-    renderNotes()
-    })
+    renderNotes();
+})
 
 //Function for assigning IDs to notes
-function assignNoteIds (){
-    for(i = 0; i < notes.length; i++){
+function assignNoteIds() {
+    for (i = 0; i < notes.length; i++) {
         notes[i].id = i;
-    }}
+    }
+}
 
-//Function for assigning rendering notes onto notes route
-function renderNotes () {
-    fs.writeFileSync("Develop/db/db.json", JSON.stringify(notes, null, 2), function(err) {
+//Function for rendering notes using fs write file
+function renderNotes() {
+    fs.writeFileSync("Develop/db/db.json", JSON.stringify(notes, null, 2), function (err) {
         if (err)
-            throw err    
-        })
-        assignNoteIds()
+            throw err
+    })
+    assignNoteIds();
 }
 
 // Starts the server
