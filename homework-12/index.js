@@ -1,7 +1,6 @@
+//Dependencies
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-
-
 
 //Message Box for start-up
 const chalk = require("chalk");
@@ -19,31 +18,28 @@ const boxenOptions = {
 };
 const msgBox = boxen(greeting, boxenOptions);
 
-
-// create the connection information for the sql database
+// Connection information for the sql database
 var connection = mysql.createConnection({
     host: "localhost",
-
-    // Your port; if not 3306
+    // Port
     port: 3306,
-
-    // Your username
+    // Username
     user: "root",
-
-    // Your password
+    // Password
     password: "",
     database: "employee_db"
 });
 
-// connect to the mysql server and sql database
+// Connect to the mysql server and sql database
 connection.connect(function (err) {
     if (err) throw err;
-    // run the start function after the connection is made to prompt the user
+    // Render start-up message in terminal
     console.log(msgBox);
+    // Run the start function after the connection is made to prompt the user
     start();
 });
 
-// function which prompts the user for what action they should take
+// Function which prompts the user for what action they should take
 function start() {
     inquirer
         .prompt({
@@ -67,13 +63,13 @@ function start() {
                 viewDepartments();
             }
             else if (answer.question === "VIEW Roles") {
-                viewRoles()
+                viewRoles();
             }
             else if (answer.question === "VIEW Employees") {
-                viewEmployees()
+                viewEmployees();
             }
             else if (answer.question === "UPDATE Employee Role") {
-                UpdateEmployeeRole()
+                UpdateEmployeeRole();
             }
             else {
                 connection.end();
@@ -81,7 +77,7 @@ function start() {
         });
 }
 
-//Add new Department
+//Add new Department (INSERT)
 function newDepartment() {
     inquirer
         .prompt([
@@ -106,7 +102,7 @@ function newDepartment() {
         });
 }
 
-//Add new Role
+//Add new Role (INSERT)
 function newRole() {
     let departments = []
 
@@ -114,8 +110,8 @@ function newRole() {
         if (err) throw err;
 
         for (var i = 0; i < results.length; i++) {
-            let storedDepartment = results[i].department_name
-            departments.push(storedDepartment)
+            let storedDepartment = results[i].department_name;
+            departments.push(storedDepartment);
         }
 
         inquirer
@@ -158,14 +154,11 @@ function newRole() {
                         start();
                     }
                 )
-
-
             })
     })
-
 }
 
-
+// Add New Employee (INSERT)
 function newEmployee() {
     let roles = []
 
@@ -173,11 +166,9 @@ function newEmployee() {
         if (err) throw err;
 
         for (var i = 0; i < results.length; i++) {
-            let storedRole = results[i].title
-            roles.push(storedRole)
+            let storedRole = results[i].title;
+            roles.push(storedRole);
         }
-
-
         inquirer
             .prompt([
                 {
@@ -190,7 +181,6 @@ function newEmployee() {
                     type: "input",
                     message: "What is the last name of the employee?"
                 },
-
                 {
                     name: "role",
                     type: "list",
@@ -204,8 +194,6 @@ function newEmployee() {
                         roleID = results[i].role_id;
                     }
                 }
-
-
                 connection.query(
                     "INSERT INTO employee SET ?;",
                     {
@@ -216,7 +204,6 @@ function newEmployee() {
                     function (err) {
                         if (err) throw err;
                         console.log("Your employee was added successfully!;");
-
                         start();
                     }
                 );
@@ -224,87 +211,91 @@ function newEmployee() {
     })
 }
 
+//View Departments (SELECT)
+
 function viewDepartments() {
     let sql = "SELECT * FROM department;"
     connection.query(sql, function (err, results) {
         if (err) throw err;
-        console.table(results)
+        console.table(results);
         start();
     })
 }
+
+//View Roles (SELECT)
 
 function viewRoles() {
     let sql = "SELECT * FROM roles LEFT JOIN department ON roles.department_id = department.department_id;"
     connection.query(sql, function (err, results) {
         if (err) throw err;
-        console.table(results)
+        console.table(results);
         start();
     })
 }
+
+//View Employees (SELECT)
 
 function viewEmployees() {
     let sql = "SELECT * FROM employee LEFT JOIN roles ON roles.role_id = employee.role_id LEFT JOIN department ON roles.department_id = department.department_id;"
     connection.query(sql, function (err, results) {
         if (err) throw err;
-        console.table(results)
+        console.table(results);
         start();
     })
 }
 
-
-
-//Update Employee Role Function
+//Update Employee Roles (UPDATE)
 
 function UpdateEmployeeRole() {
     let name = []
     let roles = []
     connection.query("SELECT first_name,last_name FROM employee;", function (err, results) {
         if (err) throw err;
-        
+
         for (var i = 0; i < results.length; i++) {
-            let storedName = `${results[i].first_name} ${results[i].last_name}`
-            name.push(storedName)
+            let storedName = `${results[i].first_name} ${results[i].last_name}`;
+            name.push(storedName);
         }
 
         connection.query("SELECT title, role_id FROM roles;", function (err, results) {
             if (err) throw err;
 
             for (var i = 0; i < results.length; i++) {
-                let storedRole = results[i].title
-                roles.push(storedRole)
+                let storedRole = results[i].title;
+                roles.push(storedRole);
             }
-    
-        inquirer
-            .prompt([
-                {
-                    name: "employee",
-                    type: "list",
-                    message: "Which Employee would you like to update?",
-                    choices: name
-                },
-                {
-                    name: "change",
-                    type: "list",
-                    message: "What role would you like to update this employee to?",
-                    choices: roles
-                }]).then(function (answer) {
-                    let chosenName = answer.employee
-                    let firstName = chosenName.toString().split(" ");     
-                    console.log(firstName[0])
-                    console.log(typeof(firstName[0]))               
-                    let roleID
-                    for (var i = 0; i < results.length; i++) {
-                        if (results[i].title === answer.change) {
-                            roleID = results[i].role_id;
+
+            inquirer
+                .prompt([
+                    {
+                        name: "employee",
+                        type: "list",
+                        message: "Which Employee would you like to update?",
+                        choices: name
+                    },
+                    {
+                        name: "change",
+                        type: "list",
+                        message: "What role would you like to update this employee to?",
+                        choices: roles
+                    }]).then(function (answer) {
+                        let chosenName = answer.employee
+                        let firstName = chosenName.toString().split(" ");
+                        console.log(firstName[0])
+                        console.log(typeof (firstName[0]))
+                        let roleID
+                        for (var i = 0; i < results.length; i++) {
+                            if (results[i].title === answer.change) {
+                                roleID = results[i].role_id;
+                            }
                         }
-                    }
-                    let sql = `UPDATE employee SET role_id = ${roleID} WHERE first_name = '${firstName[0]}' and last_name= '${firstName[1]}';`
-                    connection.query(sql, function (err, results) {
-                        if (err) throw err;
-                        console.log("Your employee was updated successfully!;");
-                        start();
+                        let sql = `UPDATE employee SET role_id = ${roleID} WHERE first_name = '${firstName[0]}' and last_name= '${firstName[1]}';`
+                        connection.query(sql, function (err, results) {
+                            if (err) throw err;
+                            console.log("Your employee was updated successfully!");
+                            start();
+                        })
                     })
-                })
-})
-})
+        })
+    })
 }
