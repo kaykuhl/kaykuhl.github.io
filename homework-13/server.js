@@ -4,30 +4,28 @@ var exphbs = require("express-handlebars");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+// Set static folder
+app.use(express.static(__dirname + '/public'));
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars as the default templating engine.
+// Set Handlebars as the default templating engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-
-// Static directory to be served
-app.use(express.static("app/public"));
-
-// Routes
-// =============================================================
-require("./models/burger.js")(app);
 
 // Handlebar Routes
 app.get("/", function(req, res) {
   res.render("index");
 });
 
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
 
-// Starts the server to begin listening
-// =============================================================
+app.use(routes);
+
+// Start Server
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
