@@ -4,6 +4,10 @@ background-color: gold;
 font-family: 'Josefin Sans', sans-serif, Arial, Helvetica, sans-serif;
 }
 
+html {
+    background-color: gold;
+}
+
 h1 {
     font-size: 50px;
     text-decoration: wavy;
@@ -36,11 +40,6 @@ h3 {
 
 .burger-img {
     width: 300px;
-}
-
-html {
-    background-image: url("/assets/images/checkerboard-cross.png");
-    background-repeat: repeat;
 }
 
 ul {

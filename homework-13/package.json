@@ -1,8 +1,15 @@
 {
-  "name": "homework-13",
+  "name": "eat-da-burger-heroku",
   "version": "1.0.0",
-  "description": "Eat-Da-Burger",
+  "description": "eat-da-burger app for heroku deployment",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,11 +19,5 @@
     "url": "kaykuhl.github.io"
   },
   "author": "Kayla Kuhlman",
-  "license": "ISC",
-  "devDependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mysql2": "^2.0.2",
-    "sequelize": "^5.21.3"
-  }
+  "license": "ISC"
 }
