@@ -26,15 +26,15 @@ As a foodie, I want an application to add new burgers and track when they are ea
 
 1. Either view on Heroku (link above), or using this repo and connecting through mySQL and command line, you will see the following index.
 
-![Index](https://kaykuhl.github.io/homework-13/public/assets/img/index.JPG)
+![Index](https://kaykuhl.github.io/homework-13/public/assets/img/index.jpg)
 
 2. You can now add burgers you wish to eat! Type in the name of the burger and select "Add Burger".
 
-![Index](https://kaykuhl.github.io/homework-13/public/assets/img/add-burgers.JPG)
+![Index](https://kaykuhl.github.io/homework-13/public/assets/img/add-burgers.jpg)
 
 3. Your burgers can now be devoured! Eat the burgers by selecting "Eat".
 
-![Index](https://kaykuhl.github.io/homework-13/public/assets/img/eat-burgers.JPG)
+![Index](https://kaykuhl.github.io/homework-13/public/assets/img/eat-burgers.jpg)
 
 4. Lastly, you can delete your devoured burgers.
 
