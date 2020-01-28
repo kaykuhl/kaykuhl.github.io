@@ -8,10 +8,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-require("./routes/api")(app);
-
-app.use(express.static("public"));
-
+require("./routes/html-routes.js")(app);
+require("./routes/apiRoutes")(app);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/imageperformance", {
   useNewUrlParser: true
