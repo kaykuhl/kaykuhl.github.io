@@ -1,4 +1,3 @@
-
 // get all workout data from back-end
 
 fetch("/api/workouts/range")
