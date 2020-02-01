@@ -8,9 +8,7 @@ Note: In this assignment, I was given the front-end code and created a Mongoose 
 
 ## Deployed Application
 
-[View Application on Heroku]()
-
--Still Needs to be Added to Heroku-
+[View Application on Heroku](https://kk-workout-tracker.herokuapp.com/)
 
 ## Technology
 
