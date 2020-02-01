@@ -11,7 +11,7 @@ app.use(express.json());
 require("./routes/html-routes.js")(app);
 require("./routes/apiRoutes")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/imageperformance", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true
 });
 

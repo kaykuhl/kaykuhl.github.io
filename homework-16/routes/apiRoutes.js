@@ -8,16 +8,9 @@ module.exports = function(app) {
   });
 
   app.put("/api/workouts/:id", function(req, res) {
-    db.Workout.updateOne({ _id: req.params.id }, {
-      "type": req.body.type,
-      "name": req.body.name,
-      "distance": req.body.distance,
-      "duration": req.body.duration,
-      "weight": req.body.weight,
-      "sets": req.body.sets,
-      "reps": req.body.reps,
-    }).then(function(result) {
-      res.json(result);
+    var newExercise = req.body
+    db.Workout.updateOne({ _id: req.params.id }, { $push: { exercises: newExercise } }).then(function(result) {
+      return res.json(result);
     });
   });
 
@@ -30,13 +23,7 @@ module.exports = function(app) {
   app.post("/api/workouts/", function(req, res) {
     db.Workout.create({
       day: new Date().setDate(new Date().getDate()),
-      type: req.body.type,
-      name: req.body.name,
-      distance: req.body.distance,
-      duration: req.body.duration,
-      weight: req.body.weight,
-      sets: req.body.sets,
-      reps: req.body.reps,
+      exercises: []
     }).then(function(result) {
       res.json(result);
     });
