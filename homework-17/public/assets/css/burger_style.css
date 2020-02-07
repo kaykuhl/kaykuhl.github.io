@@ -1,0 +1,47 @@
+.container {
+text-align: center;
+background-color: gold;
+font-family: 'Josefin Sans', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: gold;
+}
+
+h1 {
+    font-size: 50px;
+    text-decoration: wavy;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+h3 {
+    background-color:#7b4d3d;
+    color:whitesmoke;
+    padding: 15px;
+    margin: 15px;
+    font-size: 22px;
+}
+
+.delete-burger {
+    background-color: #e05c22;
+    float: right;
+    padding-top: 0px
+}
+
+.devoured {
+    background-color:#a6dc72;
+    float: right;
+    padding-top: 0px
+}
+
+
+.burger-img {
+    width: 300px;
+}
+
+ul {
+    list-style-type: none;
+  }
