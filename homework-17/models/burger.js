@@ -14,12 +14,6 @@ var burgerSchema = new Schema({
   }
   });
 
-  
-
-Burger.sync();
-
-module.exports = Burger;
-
 const Burger = mongoose.model("Burger", burgerSchema);
 
 module.exports = Burger;

@@ -4,14 +4,14 @@ var router = express.Router()
 
   // GET API OF ALL BURGERS
   router.get("/api/burgers", function(req, res) {
-    Burger.findAll({}).then(function(results) {
+    Burger.find({}).then(function(results) {
       res.json(results);
     });
   });
 
 // GET BURGER BY API/ID
     router.get("/api/burgers/:id", function(req, res) {
-      Burger.findAll({where: {id: req.params.id}}).then(function(results) {
+      Burger.find({where: {id: req.params.id}}).then(function(results) {
         res.json(results);
       });
     });
@@ -19,7 +19,7 @@ var router = express.Router()
 
 //RENDER INDEX (GET REQUEST)
 router.get("/", function(req,res){
-  Burger.findAll({}).then(function(results) {
+  Burger.find({}).then(function(results) {
     var hbsObject = {
       burgers: results
     };
