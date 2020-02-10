@@ -33,17 +33,26 @@ router.post("/api/burgers", function(req, res) {
     burger_name: req.body.burger_name,
     devoured: false
   }).then(function(results) {
-    res.send(results);
+    res.json(results);
   });
 });
 
+router.post("/api/burgers/bulk", function(req, res) {
+  Burger.insertMany({
+    burger_name: req.body.burger_name,
+    devoured: false
+  }).then(function(results) {
+    res.json(results);
+  });
+});
+
+
 //DEVOUR BURGER (PUT/UPDATE REQUEST)
 router.put("/api/burgers/:id", function(req, res) {
-  Burger.update(
-    {devoured: true}, 
-    { where: { id: req.params.id}}
+  Burger.updateOne(
+    {id:req.params.id}, {$set: {devoured: true}},
   ).then(function(results) {
-    res.json(results)
+    res.send(results)
     })
   });
 

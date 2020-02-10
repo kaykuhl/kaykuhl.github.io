@@ -11,7 +11,15 @@
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.0",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

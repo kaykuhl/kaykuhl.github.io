@@ -4,7 +4,7 @@ const request = indexedDB.open("burgerlist", 1);
 
 request.onupgradeneeded = function(event) {
   const db = event.target.result;
-  db.createObjectStore("bugerss", { autoIncrement: true });
+  db.createObjectStore("burgers", { autoIncrement: true });
 };
 
 request.onsuccess = function(event) {
@@ -29,15 +29,15 @@ function saveRecord(record) {
 }
 
 function isOffline(){
-  $("#onlineStatus").attr("src", "images/offline_button.png");
+  $("#onlineStatus").attr("src", "assets/images/offline_button.png");
 }
 
 
 function checkDatabase() {
-  $("#onlineStatus").attr("src", "images/online_button.png");
+  $("#onlineStatus").attr("src", "assets/images/online_button.png");
   
-  const transaction = db.transaction(["guests"], "readwrite");
-  const store = transaction.objectStore("guests");
+  const transaction = db.transaction(["burgers"], "readwrite");
+  const store = transaction.objectStore("burgers");
   const getAll = store.getAll();
 
   getAll.onsuccess = function() {
