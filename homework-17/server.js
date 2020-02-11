@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 app.use('/', require('./controllers/burgers_controller'));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/offlineguestlist", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/offlineburgerlist", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true 

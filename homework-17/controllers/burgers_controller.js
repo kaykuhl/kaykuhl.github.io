@@ -10,13 +10,12 @@ var router = express.Router()
   });
 
 // GET BURGER BY API/ID
-    router.get("/api/burgers/:id", function(req, res) {
-      Burger.find({where: {id: req.params.id}}).then(function(results) {
+    router.get("/api/burgers/:_id", function(req, res) {
+      Burger.find({where: {_id: req.params._id}}).then(function(results) {
         res.json(results);
       });
     });
     
-
 //RENDER INDEX (GET REQUEST)
 router.get("/", function(req,res){
   Burger.find({}).then(function(results) {
@@ -34,32 +33,42 @@ router.post("/api/burgers", function(req, res) {
     devoured: false
   }).then(function(results) {
     res.json(results);
-  });
+  })      .catch(err => {
+    res.status(400).json(err);
+  });;
 });
 
 router.post("/api/burgers/bulk", function(req, res) {
-  Burger.insertMany({
-    burger_name: req.body.burger_name,
-    devoured: false
-  }).then(function(results) {
+  console.log(req.body)
+  Burger.insertMany(req.body).then(function(results) {
     res.json(results);
-  });
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });;
 });
 
 
 //DEVOUR BURGER (PUT/UPDATE REQUEST)
 router.put("/api/burgers/:id", function(req, res) {
-  Burger.updateOne(
-    {id:req.params.id}, {$set: {devoured: true}},
+  Burger.update(
+    {id:req.params.id}, {devoured: true}
   ).then(function(results) {
     res.send(results)
     })
+    .catch(err => {
+      res.status(400).json(err);
+    });
   });
 
 //DELETE REQUEST  
 router.delete("/api/burgers/:id", function(req, res) {
   Burger.destroy(
-    { where: { id: req.params.id}}).then(function(results){
-      res.json(results)})})
+    { where: { id: req.params._id}}).then(function(results){
+      res.json(results)})
+      .catch(err => {
+        res.status(400).json(err);
+      });
+    })
 
 module.exports = router;
