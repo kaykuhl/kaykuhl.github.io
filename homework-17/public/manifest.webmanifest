@@ -1,0 +1,8 @@
+{
+    "short_name": "BurgerOffline",
+    "name": "Eat-Da-Burger Offline",
+    "start_url": "/",
+    "background_color": "#808080",
+    "display": "standalone",
+    "theme_color": "#808080"
+  }
