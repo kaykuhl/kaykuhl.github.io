@@ -1,6 +1,18 @@
 {
     "short_name": "BurgerOffline",
     "name": "Eat-Da-Burger Offline",
+    "icons": [
+      {
+        "src": "/assets/images/burger.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/images/burger.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
     "start_url": "/",
     "background_color": "#808080",
     "display": "standalone",

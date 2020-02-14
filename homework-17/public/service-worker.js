@@ -6,14 +6,11 @@
 
 const FILES_TO_CACHE = [
     "/",
-    "/index.handlebars",
-    "/layouts/main.handlebars",
-    "/assets/css/burger_style.css",
-    "/assets/js/burgers.js",
-    "/assets/images/burger.png",
-    "/assets/images/offline_button.png",
-    "/assets/images/online_button.png",
-    "/manifest.webmanifest",
+    "../views/index.handlebars",
+    "./assets/css/burger_style.css",
+    "./assets/js/burgers.js",
+    "./assets/images/burger.png",
+    "./manifest.webmanifest",
 ];
 
 const CACHE_NAME = 'static-cache-v2';
