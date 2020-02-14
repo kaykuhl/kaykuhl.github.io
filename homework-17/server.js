@@ -3,7 +3,6 @@ var exphbs = require("express-handlebars");
 var app = express();
 
 
-const mongoose = require("mongoose");
 const logger = require("morgan"); 
 
 var PORT = process.env.PORT || 8080;
@@ -23,15 +22,8 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 app.use('/', require('./controllers/burgers_controller'));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/offlineburgerlist", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true 
-});
-
 // Start Server
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
-
 

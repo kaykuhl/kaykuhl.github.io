@@ -1,20 +1,12 @@
-const mongoose = require("mongoose");
+var Sequelize = require("sequelize");
+var sequelize = require("../config/connection");
 
-const Schema = mongoose.Schema;
+var Burger = sequelize.define("Burger", {
+  burger_name: Sequelize.STRING,
+  devoured: Sequelize.BOOLEAN
+});
 
-var burgerSchema = new Schema({
-
-  burger_name: {
-    type: String,
-    trim: true,
-  },
-  devoured: {
-    type: Boolean,
-    default: false,
-  }
-  });
-
-const Burger = mongoose.model("Burger", burgerSchema);
+Burger.sync();
 
 module.exports = Burger;
 

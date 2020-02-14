@@ -4,8 +4,9 @@ background-color: gold;
 font-family: 'Josefin Sans', sans-serif, Arial, Helvetica, sans-serif;
 }
 
-html {
+body {
     background-color: gold;
+    width: 100%;
 }
 
 h1 {
@@ -15,6 +16,11 @@ h1 {
 
 h2 {
     text-decoration: underline;
+}
+
+#add-burger {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none 
 }
 
 h3 {
