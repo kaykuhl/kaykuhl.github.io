@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Slab&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Title of Webpage -->
+  <title>Kayla Kuhlman</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+
+
+    <!-- Jumbotron -->
+    <div class="index-background">
+      <div class="index-jumbo jumbotron">
+
+          <h1>Kayla Ann Kuhlman</h1>
+          <h3>Full-Stack Web Developer</h3>
+          <br>
+          <div class="contact-links" style="text-align: center; position: relative;">
+              <a class="btn btn-primary btn-lg index-btn" href="mailto:kaylaannkuhlman@gmail.com" role="button">
+                  <img alt="email icon" src="./assets/images/email.png" style="width: 20px;"></a>
+              <a class="btn btn-primary btn-lg index-btn" href="tel:612-720-4675" role="button">
+                  <img alt="phone icon" src="./assets/images/phone.png" style="width: 20px;"></a>
+              <a class="btn btn-primary btn-lg index-btn" href="https://www.linkedin.com/in/kayla-kuhlman-5639a791/" target="_blank" role="button">
+                  <img alt="linkedin icon" src="./assets/images/linked in.png" style="width: 20px;"></a>
+              <a class="btn btn-primary btn-lg index-btn" href="assets/resume.pdf" target="_blank" role="button">
+                  <img alt="pdf icon" src="./assets/images/pdf.png" style="width: 20px;"></a>
+              <a class="btn btn-primary btn-lg index-btn" href="https://www.github.com/kaykuhl" target="_blank" role="button">
+                  <img alt="github icon" src="./assets/images/githubicon.png" style="width: 20px;"> </a>
+
+          </div>
+
+
+          <p>
+
+          </p>
+      </div>
+  </div>
+
+
+
+
+  <div class="container">
+
+      <div class="row">
+          <div class="col-md-6">
+              <div id="portfolio-text">
+                  <h2>Portfolio</h2>
+                  <p>
+                      Below are a selection of projects that I found the most valuable and showcases some of my abilities.
+                  </p>
+                  <hr>
+                  <h5>Pika-Choose! - Group Project #2</h5>
+                  <img src="assets/images/pokemon.JPG" class="portfolio-image" alt="Pika-Choose Application">
+                  <p>Description: Works as a team buidler for Pokemon teams using a SQL database.</p>
+                  <p><i>Skills Strengthened: mySQL, handlebars, Heroku Deployment, GitHub</i></p>
+                  <p>Contributions: Frontend development (HTML, JS, CSS), Handlebars, Heroku Deployment, Design</p>
+                  <a href="https://protected-spire-30180.herokuapp.com/" target="_blank" class="btn btn-primary portfolio-btn">View Project</a>
+                  <a href="https://github.com/ZanderMate/teamikea" target="_blank" class="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+                  <hr>
+                  <h5>Global Eats - Group Project #1</h5>
+                  <img src="assets/images/project.PNG" class="portfolio-image" alt="Global Eats Application">
+                  <p>Description: Food and drink recipe generator based on user selection</p>
+                  <p><i>Skills Strengthened: API/AJAX calls, Github Conflict Resolution</i></p>
+                  <p>Contributions: Backend development, javaScript, Design</p>
+                  <a href="https://kaykuhl.github.io/project-1/html" target="_blank" class="btn btn-primary portfolio-btn">View Project</a>
+                  <a href="https://github.com/kaykuhl/project-1" target="_blank" class="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+                  <hr>
+                  <h5>Weather Dashboard Application</h5>
+                  <img src="assets/images/weather-dashbaord.PNG" class="portfolio-image" alt="Weather Dashboard Application">
+                  <p>Description: Displays the current weather and 5-day forcast of a searched city</p>
+                  <p><i>Skills Strengthened: API/AJAX Calls, On-click Events, Local Storage</i></p>
+                  <a href="https://kaykuhl.github.io/homework-6" target="_blank" class="btn btn-primary portfolio-btn">View Project</a>
+                  <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/homework-6" target="_blank" class="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+                  <hr>
+                  <h5>Quiz Game Application</h5>
+                  <img src="assets/images/quiz-game.PNG" class="portfolio-image" alt="Quiz Game Application">
+                  <p>Description: Quiz game that scores points based on correct answers and time remaining</p>
+                  <p><i>Skills Strengthened: Timer (Interval) function, On-click Events</i></p>
+                  <a href="https://kaykuhl.github.io/homework-4" target="_blank" class="btn btn-primary portfolio-btn">View Project</a>
+                  <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/homework-4" target="_blank" class="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+              </div>
+          </div>
+
+
+          <div class="col-md-6">
+              <div id="about-me-text">
+                  <p class="summary">
+                      My name is Kayla Kuhlman and I am a motivated full-stack web developer new to the field. With a background in analytical chemistry and quality management, I bring a strong problem-solving skill-set to the table.
+                  </p>
+
+                  <h2>Skills</h2>
+                  <ul style="text-align: left;">
+                      <li>MERN Full-Stack Web Development</li>
+                      <li><b>HTML5</b>,
+                          <b>CSS3</b>, <b>javaScript</b>, <b>React.js</b>, <b>Node.js</b>, <b>MongoDB</b>,
+                          <b>Express</b>, <b>MySQL</b>, <b>jQuery</b>, <b>Responseive Design</b>, 
+                          <b>Git</b>, <b>ORM Programming</b>, <b>Jest (testing)</b></li>
+                      <li><b>Microsoft Access</b> and <b>Excel</b></li>
+                      <li>Quality Management</li>
+                      <li>Technical/SOP Writing</li>
+                      <li>Problem Solving and Troubleshooting</li>
+                      <li>Meeting Leadership</li>
+                      <li>Teamwork/Collaboration</li>
+                      <li>Drive and passion to become a Full Stack Developer!</li>
+                  </ul>
+                  </p>
+
+                  <h2>About Me</h2>
+                  <p>
+                      After graduating with a BS in Chemistry from Winona State University in 2014 and holding successful roles as an analytical chemist and quality manager, I found a lot of passion in making changes to the laboratory databases and updating documentation.
+                      I have self-taught skills in building access databases and have been able to work with the IT departments in my previous positions. When I started looking into coding languages such as javaScript, I was blown away by the possibilities.
+                  </p>
+                  <p>
+                      I enjoy using code to solve problems, big and small. I also understand the importance of appearance and a good user interface so that the functionality and efficiency of your application can be fully utilized. I love working with others and collaborating
+                      ideas to make a successful product.  I also do great work independently and have a lot of drive to make my career change a reality. I'm excited to see what 2020 has in store for me.
+                  </p>
+                  <p>
+                      When I am not coding, I enjoy traveling, rock climbing, playing board games, and hanging out with my Siberian cat, Kronk.
+                  </p>
+                  <p>
+                      <img id="picture-of-me3" alt="My Picture" src="assets/images/me.jpg" class="rounded aboutmepicture" style="height: 200px; transform: scaleX(-1);">
+                      <img id="picture-of-me2" alt="My Picture" src="assets/images/travel-headshot.jpg" class="rounded aboutmepicture" style="height: 200px;">
+                      <img id="picture-of-me5" alt="My Picture" src="assets/images/headshot.jpg" class="rounded aboutmepicture" style="height: 200px;">
+                  </p>
+              </div>
+
+          </div>
+
+
+
+</body>
+
+</html>
