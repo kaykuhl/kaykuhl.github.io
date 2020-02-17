@@ -10,23 +10,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css">
 	<link rel="manifest" href="/manifest.webmanifest" />
+	<link rel="shortcut icon" href="/public/assets/images/favicon.ico">
 
 </head>
 
 <body>
 	{{{ body }}}
+	
 	<script src="/assets/js/burgers.js"></script>
 
 	<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then((reg) => {
-          console.log('We found your service worker file!', reg);
-        });
-    });
-  }
-</script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('service-worker.js')
+					.then((reg) => {
+						console.log('We found your service worker file!', reg);
+					});
+			});
+		}
+	</script>
 
 </body>
 

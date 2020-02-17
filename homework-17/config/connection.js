@@ -21,8 +21,7 @@ var sequelize = new Sequelize("eat-da-burger", "root", "", {
   },
   define: {
     timestamps: false
-}
-});
+}})
 }
 // Exports the connection for other files to use
 module.exports = sequelize;

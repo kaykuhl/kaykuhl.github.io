@@ -3,7 +3,7 @@ var sequelize = require("../config/connection");
 
 var Burger = sequelize.define("Burger", {
   burger_name: Sequelize.STRING,
-  devoured: Sequelize.BOOLEAN
+  devoured: Sequelize.BOOLEAN,
 });
 
 Burger.sync();
