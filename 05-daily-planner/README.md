@@ -2,7 +2,7 @@
 
 ## Description
 This application is an interactive daily planner and was created using javaScript and Moment.js 
-Link to Application [here](https://kaykuhl.github.io/homework-5/)
+Link to Application [here](https://kaykuhl.github.io/05-daily-planner/)
 
 ## Features
 The application has time slots for each of the hours between 9AM and 5PM.  In each of the time slots, there is the following:
@@ -18,13 +18,13 @@ The current day and time is displayed at the top of the calendar and additionall
 ## Screenshots
 
 The current day and time is displayed on top of the page.
-![Landing Page Screenshot](https://kaykuhl.github.io/homework-5/images/readme-index.PNG)
+![Landing Page Screenshot](https://kaykuhl.github.io/05-daily-planner/images/readme-index.PNG)
 
 Based on the current time of day, the color of the time blocks will reflect if the hour is in the past, present, or future.
-![Colors Screenshot](https://kaykuhl.github.io/homework-5/images/readme-colors.PNG)
+![Colors Screenshot](https://kaykuhl.github.io/05-daily-planner/images/readme-colors.PNG)
 
 The user is able to type in input next to each hour and by pressing the save button, pushing the input to local storage in the browser.
-![Saving Screenshot](https://kaykuhl.github.io/homework-5/images/readme-save.PNG)
+![Saving Screenshot](https://kaykuhl.github.io/05-daily-planner/images/readme-save.PNG)
 
 
 

@@ -24,7 +24,7 @@ As a leader in top management, I want an employee management application so that
 
 1. After connecting to the server through mySQL using the schema provided in this repo, you will start the application and see the following options:
 
-![Index](https://kaykuhl.github.io/homework-12/images/start.JPG)
+![Index](https://kaykuhl.github.io/10-mysql-employee-manager/images/start.JPG)
 
 2. You can click on any of the options to: 
 
@@ -36,4 +36,4 @@ As a leader in top management, I want an employee management application so that
 
 3. Adding departments, roles, and employees will add to the SQL database that was created (employee_db), when you view the tables, they will look like this:
 
-![View departments, roles, employees](https://kaykuhl.github.io/homework-12/images/tables.JPG)
+![View departments, roles, employees](https://kaykuhl.github.io/10-mysql-employee-manager/images/tables.JPG)

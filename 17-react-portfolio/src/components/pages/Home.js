@@ -29,15 +29,15 @@ function Home() {
             <img src={"../../images/weather-dashbaord.PNG"} className="portfolio-image" alt="Weather Dashboard Application"></img>
             <p>Description: Displays the current weather and 5-day forcast of a searched city</p>
             <p><i>Skills Strengthened: API/AJAX Calls, On-click Events, Local Storage</i></p>
-            <a href="https://kaykuhl.github.io/homework-6" target="_blank" className="btn btn-primary portfolio-btn">View Project</a>
-            <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/homework-6" target="_blank" className="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+            <a href="https://kaykuhl.github.io/06-weather-dashboard" target="_blank" className="btn btn-primary portfolio-btn">View Project</a>
+            <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/06-weather-dashboard" target="_blank" className="btn btn-primary portfolio-btn">View Repository on GitHub</a>
             <hr></hr>
             <h5>Quiz Game Application</h5>
             <img src={"../../images/quiz-game.PNG"} className="portfolio-image" alt="Quiz Game Application"></img>
             <p>Description: Quiz game that scores points based on correct answers and time remaining</p>
             <p><i>Skills Strengthened: Timer (Interval) function, On-click Events</i></p>
-            <a href="https://kaykuhl.github.io/homework-4" target="_blank" className="btn btn-primary portfolio-btn">View Project</a>
-            <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/homework-4" target="_blank" className="btn btn-primary portfolio-btn">View Repository on GitHub</a>
+            <a href="https://kaykuhl.github.io/04-quiz-game" target="_blank" className="btn btn-primary portfolio-btn">View Project</a>
+            <a href="https://github.com/kaykuhl/kaykuhl.github.io/tree/master/04-quiz-game" target="_blank" className="btn btn-primary portfolio-btn">View Repository on GitHub</a>
           </div>
   );
 }

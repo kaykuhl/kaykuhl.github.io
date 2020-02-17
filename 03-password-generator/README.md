@@ -5,9 +5,9 @@ This application generates a random password based on user selection of password
 
 ## Features
 
-Link to Application [here](https://kaykuhl.github.io/homework-3/)
+Link to Application [here](https://kaykuhl.github.io/03-password-generator/)
 
-![Landing Page Screenshot](https://kaykuhl.github.io/homework-3/images/readme-index.PNG)
+![Landing Page Screenshot](https://kaykuhl.github.io/03-password-generator/images/readme-index.PNG)
 
 By the press of a button, the application allows users to select:
 * Password length
@@ -16,7 +16,7 @@ By the press of a button, the application allows users to select:
 * If uppercase characters will be used
 * If lowercase characters will be used
 
-![Password Length Pop-up Screenshot](https://kaykuhl.github.io/homework-3/images/readme-popup.PNG)
+![Password Length Pop-up Screenshot](https://kaykuhl.github.io/03-password-generator/images/readme-popup.PNG)
 
 A password will be generated based on these criteria.  The application ensures that:
 * The password length is 8 - 128 characters
@@ -24,8 +24,8 @@ A password will be generated based on these criteria.  The application ensures t
 * At least one character type is used
 
 The password is generated in the text box on screen.  
-![Password is Generated Screenshot](https://kaykuhl.github.io/homework-3/images/readme-password.PNG)
+![Password is Generated Screenshot](https://kaykuhl.github.io/03-password-generator/images/readme-password.PNG)
 
 The application allows for a "copy to clipboard" function initiaed by a press of a button.
 
-![Copy to clipboard Screenshot](https://kaykuhl.github.io/homework-3/images/readme-copy.PNG)
+![Copy to clipboard Screenshot](https://kaykuhl.github.io/03-password-generator/images/readme-copy.PNG)

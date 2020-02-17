@@ -8,24 +8,24 @@ The user answers questions and the application keeps score of points. A timer st
 
 ## Screenshots
 
-Link to Application [here](https://kaykuhl.github.io/homework-4/)
+Link to Application [here](https://kaykuhl.github.io/04-quiz-game/)
 
 The quiz is initiated by the click of the "Start Quiz" button.
 
-![Landing Page Screenshot](https://kaykuhl.github.io/homework-4/images/readme-index.PNG)
+![Landing Page Screenshot](https://kaykuhl.github.io/04-quiz-game/images/readme-index.PNG)
 
 This renders the questions and starts the timer.
 
-![Questions and Timer](https://kaykuhl.github.io/homework-4/images/readme-questions&timer.PNG)
+![Questions and Timer](https://kaykuhl.github.io/04-quiz-game/images/readme-questions&timer.PNG)
 
 Based on if the user selects the correct answer, a message will display.  If the user gets the question wrong, they lose 10 seconds. If the answer is correct, they gain 10 points.
 
-![Display Results](https://kaykuhl.github.io/homework-4/images/readme-result.PNG)
+![Display Results](https://kaykuhl.github.io/04-quiz-game/images/readme-result.PNG)
 
 Once the user has gone through the 10 questions or the time runs out, the quiz will be complete and the final score will display.
 
-![Quiz Complete](https://kaykuhl.github.io/homework-4/images/readme-complete.PNG)
+![Quiz Complete](https://kaykuhl.github.io/04-quiz-game/images/readme-complete.PNG)
 
 There will be an input for users to submit their initials for a highscore list.
 
-![Display High Scores](https://kaykuhl.github.io/homework-4/images/readme-highscores.PNG)
+![Display High Scores](https://kaykuhl.github.io/04-quiz-game/images/readme-highscores.PNG)
