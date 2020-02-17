@@ -1,7 +1,7 @@
 # Portfolio
 
 ## Description
-Link to Application [here](https://kaykuhl.github.io/portfolio)
+Link to Application [here](https://kaykuhl.github.io/kaykuhl.github.io/17-react-portfolio)
 
 This is a responsive portfolio built for React that provides contact information, portfolio projects, and an about me for Kayla Kuhlman.
 

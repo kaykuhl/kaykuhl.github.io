@@ -28,11 +28,11 @@ As a person starting my fitness journey, I want an application to keep track of 
 
 2. You can add you work-out type and the information.
 
-![Index](https://kaykuhl.github.io/homework-16/public/assets/images/add-excercise.JPG)
+![Index](https://kaykuhl.github.io/14-mongodb-workout-tracker/public/assets/images/add-excercise.JPG)
 
 3. You can also navigate to the dashboard by clicking "Fitness Tracker Dashboard" on the upper left.
 
-![Add Burgers](https://kaykuhl.github.io/homework-16/public/assets/images/dashboard.JPG)
+![Add Burgers](https://kaykuhl.github.io/14-mongodb-workout-tracker/public/assets/images/dashboard.JPG)
 
 
 ## Future Development
