@@ -5,10 +5,6 @@ function Contact(props) {
     return (
         <div className="index-background">
             <div className="index-jumbo jumbotron">
-
-                <h1>Kayla Ann Kuhlman</h1>
-                <h3>Full-Stack Web Developer</h3>
-                <br></br>
                 <div className="contact-links">
                     <a className="btn" href="mailto:kaylaannkuhlman@gmail.com" role="button">
                         <img alt="email icon" src={"../../images/email.png"} style={{ width: 20 + "px" }} /> KaylaAnnKuhlman@gmail.com</a>

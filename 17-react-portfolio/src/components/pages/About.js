@@ -6,16 +6,8 @@ function About() {
 
         <div className="container">
             <div id="about-me-text">
-                <p>
-                    My name is Kayla Kuhlman and I am a motivated full-stack web developer new to the field. With a background in analytical chemistry and quality management, I bring a strong problem-solving skill-set to the table.
-    </p>
 
                 <h2>Skills</h2>
-
-                <div className="row">
-                    <div className="col-md-6">
-
-                        <b>MERN Full-Stack Web Development:</b><br />
                         HTML <br />
                         JavaScript <br />
                         CSS <br />
@@ -29,19 +21,16 @@ function About() {
                         React <br />
                         Git <br />
                         Heroku <br />
-                        ORM Programming <br />
-                        Jest (Testing) <br />
-                    </div>
-                    <div className="col-md-6">
-                        <b>Additional Skills:</b><br />
-                        Microsoft Access and Excel<br />
-                        Quality Management<br />
-                        Technical/SOP Writing<br />
-                        Meeting Leadership<br />
-                        Drive and passion to become a Full Stack Developer!<br />
 
-                    </div>
-                </div>
+                    <img src={"../../images/html-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"../../images/css-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"../../images/js-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"../../images/react-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"../../images/desktop-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"../../images/responsive-icon.png"} style={{width: 100 + "px"}}></img>
+                    
+
+
                 <h2>About Me</h2>
                 <p>
                     After graduating with a BS in Chemistry from Winona State University in 2014 and holding successful roles as an analytical chemist and quality manager, I found a lot of passion in making changes to the laboratory databases and updating documentation.
