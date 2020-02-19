@@ -2,35 +2,12 @@ import React from "react";
 import '../../style.css';
 
 function About() {
+
+
     return (
 
         <div className="container">
             <div id="about-me-text">
-
-                <h2>Skills</h2>
-                        HTML <br />
-                        JavaScript <br />
-                        CSS <br />
-                        jQuery <br />
-                        API/AJAX Calls <br />
-                        Responsive Design <br />
-                        MongoDB <br />
-                        MySQL <br />
-                        Express <br />
-                        Node.js <br />
-                        React <br />
-                        Git <br />
-                        Heroku <br />
-
-                    <img src={"../../images/html-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/css-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/js-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/react-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/desktop-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/responsive-icon.png"} style={{width: 100 + "px"}}></img>
-                    
-
-
                 <h2>About Me</h2>
                 <p>
                     After graduating with a BS in Chemistry from Winona State University in 2014 and holding successful roles as an analytical chemist and quality manager, I found a lot of passion in making changes to the laboratory databases and updating documentation.
