@@ -1,6 +1,8 @@
 import React from "react";
 import '../../style.css';
 
+
+
 function Skills() {
 
 
@@ -24,12 +26,12 @@ function Skills() {
                         Git <br />
                         Heroku <br />
 
-                    <img src={"../../images/html-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/css-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/js-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/react-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/desktop-icon.png"} style={{width: 100 + "px"}}></img>
-                    <img src={"../../images/responsive-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/html-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/css-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/js-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/react-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/desktop-icon.png"} style={{width: 100 + "px"}}></img>
+                    <img src={"/portfolio/images/responsive-icon.png"} style={{width: 100 + "px"}}></img>
             </div>
 
         </div>
