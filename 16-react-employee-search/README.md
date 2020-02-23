@@ -2,7 +2,7 @@
 
 ## Discription
 
-View Deployed Application [Here]().
+[View Application on FireBase](https://employee-react-app.firebaseapp.com/)
 
 This application is an employee directory that was created using React.  It allows the user to both search and filters a set of employee profiles.
 
@@ -16,6 +16,7 @@ As a user, I want to be able to view my entire employee directory at once so tha
 * HTML
 * CSS
 * Bootstrap
+* Firebase
 
 ## Instructions
 
