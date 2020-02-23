@@ -10,10 +10,10 @@ function EmployeeInfo(props) {
     <div className="text-center">
       {results.length > 0 ? (
         <ul className="list-group">
-          <h2>Featured Employees</h2>
+          <h2>Employees</h2>
           {results.map(result => (
             <li className="list-group-item" key={result.id}>
-              <b>{result.year}</b> {result.name} {result.model}
+              <img src={result.url} className="employee-icon" alt="employee icon for {result.name}"></img> {result.name} | {result.location} | {result.phone}
             </li>
           ))}
         </ul >

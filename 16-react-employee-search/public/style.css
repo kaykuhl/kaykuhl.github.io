@@ -1,0 +1,16 @@
+.buttons-div {
+    text-align: center;
+}
+
+.filter-btn {
+    margin: 5px;
+}
+
+body {
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png");
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+}
+
+.employee-icon {
+    width: 40px
+}

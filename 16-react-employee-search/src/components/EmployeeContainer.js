@@ -12,7 +12,6 @@ class EmployeeContainer extends Component {
     search: ""
   };
 
-  // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
     this.searchEmployees();
   }
@@ -23,6 +22,66 @@ class EmployeeContainer extends Component {
     this.setState({ 'result': searchResults });
   };
 
+  sortEmployeesLocationA = () => {
+    const sortResults = EmployeeList.sort(function (a, b) {
+      var nameA = a.location.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.location.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    })
+    this.setState({ sortResults })
+  };
+
+  sortEmployeesLocationB = () => {
+    const sortResults = EmployeeList.sort(function (a, b) {
+      var nameA = a.location.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.location.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return 1;
+      }
+      if (nameA > nameB) {
+        return -1;
+      }
+      return 0;
+    })
+    this.setState({ sortResults })
+  };
+
+  sortEmployeesNamesA = () => {
+    const sortResults = EmployeeList.sort(function (a, b) {
+      var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    })
+    this.setState({ sortResults })
+  };
+
+  sortEmployeesNamesB = () => {
+    const sortResults = EmployeeList.sort(function (a, b) {
+      var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return 1;
+      }
+      if (nameA > nameB) {
+        return -1;
+      }
+      return 0;
+    })
+    this.setState({ sortResults })
+  };
+
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -31,7 +90,6 @@ class EmployeeContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the OMDB API for the value of `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchEmployees();
@@ -54,6 +112,24 @@ class EmployeeContainer extends Component {
         </Row>
         <Row>
           <Col size="md-12">
+            <div className="buttons-div">
+              <button onClick={this.sortEmployeesNamesA} className="btn filter-btn">
+                Sort By Name
+            <br></br>(Ascending A-Z)
+        </button>
+              <button onClick={this.sortEmployeesNamesB} className="btn filter-btn">
+                Sort By Name
+            <br></br>(Decending Z-A)
+        </button>
+              <button onClick={this.sortEmployeesLocationA} className="btn filter-btn">
+                Sort By Location
+            <br></br>(Ascending A-Z)
+        </button>
+              <button onClick={this.sortEmployeesLocationB} className="btn filter-btn">
+                Sort By Location
+            <br></br>(Decending Z-A)
+        </button>
+            </div>
             <hr />
             <EmployeeInfo search={this.state.search} />
           </Col>
