@@ -17,12 +17,12 @@ function SearchForm(props) {
             name="search"
             type="text"
             className="form-control"
-            placeholder="Search Cars"
+            placeholder="Search Employees By Name"
             id="search"
           />
           <br />
           <button onClick={props.handleFormSubmit} className="btn btn-primary">
-            Search Cars
+            Search
         </button>
         </div>
       </form>

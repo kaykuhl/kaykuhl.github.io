@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "Joe Schmo",
+		"location": "Minneapolis",
+		"phone": "029-928-2895"
+	},
+	{
+		"id": 1,
+		"name": "Sarah Anderson",
+		"location": "Minneapolis",
+		"phone": "029-928-2895"
+	},
+	{
+		"id": 1,
+		"name": "Joe Rock",
+		"location": "Minneapolis",
+		"phone": "029-928-2895"
+	}
+]

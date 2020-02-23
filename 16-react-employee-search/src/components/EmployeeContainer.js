@@ -3,23 +3,23 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 import SearchForm from "./SearchForm";
-import CarInfo from "./CarInfo";
-import CarList from "../data/cars.json";
+import EmployeeInfo from "./EmployeeInfo";
+import EmployeeList from "../data/Employees.json";
 
-class CarContainer extends Component {
+class EmployeeContainer extends Component {
   state = {
     result: [],
-    search: "Mazda"
+    search: ""
   };
 
   // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
-    this.searchCars();
+    this.searchEmployees();
   }
 
-  searchCars = () => {
+  searchEmployees = () => {
     const searchQuery = this.state.search.trim();
-    const searchResults = CarList.filter((car) => car.make === searchQuery);
+    const searchResults = EmployeeList.filter((employee) => employee.name === searchQuery);
     this.setState({ 'result': searchResults });
   };
 
@@ -34,7 +34,7 @@ class CarContainer extends Component {
   // When the form is submitted, search the OMDB API for the value of `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchCars();
+    this.searchEmployees();
   };
 
   render() {
@@ -44,7 +44,7 @@ class CarContainer extends Component {
           <Col size="md-4" />
           <Col size="md-4">
             <SearchForm
-              searchtype="Make"
+              searchtype="Name"
               value={this.state.search}
               handleInputChange={this.handleInputChange}
               handleFormSubmit={this.handleFormSubmit}
@@ -55,7 +55,7 @@ class CarContainer extends Component {
         <Row>
           <Col size="md-12">
             <hr />
-            <CarInfo search={this.state.search} />
+            <EmployeeInfo search={this.state.search} />
           </Col>
         </Row>
       </Container >
@@ -63,4 +63,4 @@ class CarContainer extends Component {
   }
 }
 
-export default CarContainer;
+export default EmployeeContainer;
