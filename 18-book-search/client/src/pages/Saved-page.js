@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
-function Detail(props) {
+function Saved(props) {
   const [book, setBook] = useState({})
 
 // Add code to get the book with an _id equal to the id in the route param
@@ -47,4 +47,4 @@ function Detail(props) {
   }
 
 
-export default Detail;
+export default Saved;
